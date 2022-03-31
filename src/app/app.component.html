@@ -398,7 +398,10 @@
       <pre *ngSwitchCase="'build'">ng build</pre>
   </div>
 </div>
-
+<div class="card-container">
+  <input [(ngModel)]="y">
+  <input [(ngModel)]="x">
+</div>
 <div class="card-container action-buttons">
   <button class="card card-small actions" (click)="onPerform()">
     <span>Perform calculation</span>
@@ -412,13 +415,16 @@
   <button class="card card-small actions" (click)="onPerformWebWorkerParallel()">
     <span>Perform calculation <br> (2 WebWorkers)</span>
   </button>
+  <button class="card card-small actions" (click)="onPerformWebWorkerArrayBuffer()">
+    <span>Perform calculation <br> (SharedArrayBuffer)</span>
+  </button>
   <button class="card card-small actions check" (click)="onCheck()">
     <span>Check Worker Status</span>
   </button>
 </div>
 
 <div class="results">
-  <div *ngFor="let calcTime of calcTimes" class="card-container">
-    <span>The Last Calculation was done in {{calcTime}} ms with result {{result}}</span>
+  <div *ngFor="let calcTime of calcTimes; let i = index" class="card-container">
+    <span>The Last Calculation was done in {{calcTime}} ms with result {{results[i]}}</span>
   </div>
 </div>
