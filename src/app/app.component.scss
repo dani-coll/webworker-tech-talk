@@ -1,0 +1,22 @@
+.actions {
+  background-color: red!important;
+  color: white!important;
+  font-weight: bold!important;
+  cursor: pointer;
+}
+
+.check {
+  background-color: blue!important;
+}
+
+.action-buttons {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.results {
+  max-height: 200px;
+  overflow: scroll;
+}
