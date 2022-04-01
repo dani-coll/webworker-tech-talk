@@ -351,9 +351,6 @@
   </div>
 
   <!-- Next Steps -->
-  <h2>Next Steps</h2>
-  <p>What do you want to do next with your app?</p>
-
   <input type="hidden" #selection>
 
   <div class="card-container">
@@ -425,6 +422,6 @@
 
 <div class="results">
   <div *ngFor="let calcTime of calcTimes; let i = index" class="card-container">
-    <span>The Last Calculation was done in {{calcTime}} ms with result {{results[i]}}</span>
+    <span>Calculation done in {{calcTime}} ms with result {{results[i]}}</span>
   </div>
 </div>

@@ -5,7 +5,6 @@ import {longCalculation, WebWorkerData} from './calculator.utils';
 
 addEventListener('message', ({ data } : {data: WebWorkerData}) => {
   const {action, x, y, buffer} = data;
-  console.log(data)
   switch(action) {
     case 'hello':
       postMessage('CPU Usage %');
@@ -27,7 +26,8 @@ addEventListener('message', ({ data } : {data: WebWorkerData}) => {
       const storedResult = Atomics.load(firstBuffer, 0);
       console.log("I've received from my friend: " + storedResult)
 
-      const finalResult = firstResult + storedResult;
+      Atomics.add(firstBuffer, 0, firstResult);
+      const finalResult = Atomics.load(firstBuffer, 0);
       console.log("Total: " + finalResult)
       postMessage(finalResult)
     break;
